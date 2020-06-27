@@ -15,4 +15,6 @@
     <color name="colorPrimaryDark">#ffffff</color>
     <color name="colorPrimaryVariant">#959595</color>
     <color name="colorSecondaryVariant">#cfcfcf</color>
+
+    <color name="colorCardChange">#FF5722</color>
 </resources>
