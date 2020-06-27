@@ -10,9 +10,21 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val cardView = findViewById<MaterialCardView>(R.id.card_view_animate)
-        cardView.setOnClickListener {
-            startCircularFillingEffect(cardView, applicationContext)
+        val fillFadeExitCardView = findViewById<MaterialCardView>(R.id.card_filling_and_fade)
+        val fillCardView = findViewById<MaterialCardView>(R.id.card_filling)
+        val fadeExitCardView = findViewById<MaterialCardView>(R.id.card_fade_exit)
+
+        fillFadeExitCardView.setOnClickListener {
+            startCircularFillingEffect(fillFadeExitCardView, applicationContext)
+            fadeOutViewAnimation(fillFadeExitCardView, applicationContext)
+        }
+
+        fillCardView.setOnClickListener {
+            startCircularFillingEffect(fillCardView, applicationContext)
+        }
+
+        fadeExitCardView.setOnClickListener {
+            fadeOutViewAnimation(fadeExitCardView, applicationContext)
         }
     }
 }

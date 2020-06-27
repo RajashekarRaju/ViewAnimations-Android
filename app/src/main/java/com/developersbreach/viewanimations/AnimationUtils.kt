@@ -1,6 +1,7 @@
 package com.developersbreach.viewanimations
 
 import android.animation.Animator
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.View
 import android.view.ViewAnimationUtils
@@ -9,6 +10,7 @@ import android.view.animation.AnimationUtils
 import com.google.android.material.card.MaterialCardView
 import kotlin.math.hypot
 
+@SuppressLint("NewApi")
 fun startCircularFillingEffect(
     cardView: MaterialCardView,
     context: Context
@@ -20,6 +22,7 @@ fun startCircularFillingEffect(
             context.theme
         )
     )
+
     val cx = cardView.right
     val cy = cardView.top
     // get the final radius for the clipping circle
@@ -35,8 +38,12 @@ fun startCircularFillingEffect(
     animator.addListener(object : Animation(), Animator.AnimatorListener {
 
         override fun onAnimationEnd(p0: Animator?) {
-            fadeOutViewAnimation(cardView, context)
-            cardView.visibility = View.INVISIBLE
+            cardView.setCardBackgroundColor(
+                context.resources.getColor(
+                    R.color.colorSecondary,
+                    context.theme
+                )
+            )
         }
 
         override fun onAnimationRepeat(p0: Animator?) {
@@ -55,6 +62,7 @@ fun fadeOutViewAnimation(
     context: Context
 ): Animation {
     val animFadeOut = AnimationUtils.loadAnimation(context, R.anim.fade_exit)
+    animFadeOut.duration = 2000L
     view.startAnimation(animFadeOut)
     return animFadeOut
 }

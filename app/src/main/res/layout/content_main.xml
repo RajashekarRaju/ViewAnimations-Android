@@ -9,9 +9,9 @@
     tools:showIn="@layout/activity_main">
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card_view_animate"
+        android:id="@+id/card_filling_and_fade"
         android:layout_width="match_parent"
-        android:layout_height="280dp"
+        android:layout_height="200dp"
         app:cardBackgroundColor="?attr/colorSecondary"
         app:cardCornerRadius="8dp"
         app:cardElevation="16dp"
@@ -22,8 +22,51 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/app_name"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+            android:text="@string/fill_and_fade_exit"
+            android:fontFamily="monospace"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+            android:textColor="?attr/colorOnSecondary" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_filling"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:cardBackgroundColor="?attr/colorSecondary"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="16dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintTop_toBottomOf="@id/card_filling_and_fade">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/fill"
+            android:fontFamily="monospace"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+            android:textColor="?attr/colorOnSecondary" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_fade_exit"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:cardBackgroundColor="?attr/colorSecondary"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="16dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintTop_toBottomOf="@id/card_filling">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/fade_exit"
+            android:fontFamily="monospace"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
             android:textColor="?attr/colorOnSecondary" />
 
     </com.google.android.material.card.MaterialCardView>
