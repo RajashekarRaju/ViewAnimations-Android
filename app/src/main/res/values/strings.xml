@@ -3,4 +3,7 @@
     <string name="fill_and_fade_exit">Fill and Fade Exit</string>
     <string name="fill">Fill only</string>
     <string name="fade_exit">Fade Exit</string>
+    <string name="simple_transition_text">Simple Transition</string>
+    <string name="interpolator_text">Interpolator</string>
+    <string name="coordinate_text">Coordinate</string>
 </resources>
