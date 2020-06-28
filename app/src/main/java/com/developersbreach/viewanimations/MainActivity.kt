@@ -2,29 +2,20 @@ package com.developersbreach.viewanimations
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.card.MaterialCardView
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        navController = this.findNavController(R.id.nav_host_fragment)
+    }
 
-        val fillFadeExitCardView = findViewById<MaterialCardView>(R.id.card_filling_and_fade)
-        val fillCardView = findViewById<MaterialCardView>(R.id.card_filling)
-        val fadeExitCardView = findViewById<MaterialCardView>(R.id.card_fade_exit)
-
-        fillFadeExitCardView.setOnClickListener {
-            startCircularFillingEffect(fillFadeExitCardView, applicationContext)
-            fadeOutViewAnimation(fillFadeExitCardView, applicationContext)
-        }
-
-        fillCardView.setOnClickListener {
-            startCircularFillingEffect(fillCardView, applicationContext)
-        }
-
-        fadeExitCardView.setOnClickListener {
-            fadeOutViewAnimation(fadeExitCardView, applicationContext)
-        }
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp()
     }
 }
