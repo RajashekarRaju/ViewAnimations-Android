@@ -17,4 +17,13 @@
     <color name="colorSecondaryVariant">#cfcfcf</color>
 
     <color name="colorCardChange">#FF5722</color>
+
+    <color name="colorFirstCard">#FF5722</color>
+    <color name="colorSecondCard">#009688</color>
+    <color name="colorThirdCard">#9C27B0</color>
+    <color name="colorFourthCard">#E91E63</color>
+    <color name="colorFifthCard">#3F51B5</color>
+    <color name="colorSixthCard">#4CAF50</color>
+    <color name="colorSeventhCard">#FFEB3B</color>
+
 </resources>
