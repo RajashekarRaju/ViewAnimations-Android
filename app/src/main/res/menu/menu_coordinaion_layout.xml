@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/animate_again_menu_item"
+        android:icon="@drawable/ic_animate_again"
+        android:title="@string/animate_menu_item_title"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/animate_category_menu_item"
+        android:icon="@drawable/ic_animate_category"
+        android:title="@string/animate_category_item_title"
+        app:showAsAction="ifRoom" />
+
+</menu>
