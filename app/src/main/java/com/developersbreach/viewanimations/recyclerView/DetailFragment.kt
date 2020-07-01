@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.transition.TransitionInflater
 import com.developersbreach.viewanimations.R
+import java.util.concurrent.TimeUnit
 
 
 class DetailFragment : Fragment() {
@@ -25,7 +27,11 @@ class DetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_detail, container, false)
+        val view = inflater.inflate(R.layout.fragment_detail, container, false)
+        sharedElementEnterTransition =
+            TransitionInflater.from(context).inflateTransition(android.R.transition.move)
+        postponeEnterTransition(250, TimeUnit.MILLISECONDS)
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -38,5 +44,8 @@ class DetailFragment : Fragment() {
         banner.setImageResource(sportsArgs.banner)
         title.text = sportsArgs.title
         about.text = sportsArgs.about
+
+        banner.transitionName = sportsArgs.banner.toString()
+        title.transitionName = sportsArgs.title
     }
 }
