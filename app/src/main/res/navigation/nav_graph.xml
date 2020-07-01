@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
@@ -10,13 +9,28 @@
         android:id="@+id/homeFragment"
         android:name="com.developersbreach.viewanimations.HomeFragment"
         android:label="Home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/homeToSimpleTransitionsFragment"
-            app:destination="@id/simpleTransitionsFragment" />
+            app:destination="@id/simpleTransitionsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
         <action
             android:id="@+id/homeToCoordinatedMotionFragment"
-            app:destination="@id/coordinatedMotionFragment" />
+            app:destination="@id/coordinatedMotionFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/homeToRecyclerViewFragment"
+            app:destination="@id/recyclerViewFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
     </fragment>
 
     <fragment
@@ -30,5 +44,29 @@
         android:name="com.developersbreach.viewanimations.coorodinated.CoordinatedMotionFragment"
         android:label="CoordinatedMotion"
         tools:layout="@layout/fragment_coordinated_motion" />
+
+    <fragment
+        android:id="@+id/recyclerViewFragment"
+        android:name="com.developersbreach.viewanimations.recyclerView.RecyclerViewFragment"
+        android:label="RecyclerView"
+        tools:layout="@layout/fragment_recycler_view">
+        <action
+            android:id="@+id/ListToDetailFragment"
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.developersbreach.viewanimations.recyclerView.DetailFragment"
+        android:label="Details"
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="sportsArgs"
+            app:argType="com.developersbreach.viewanimations.recyclerView.Sports" />
+    </fragment>
 
 </navigation>

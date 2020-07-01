@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.navigation.fragment.findNavController
 import com.developersbreach.viewanimations.coorodinated.startAnimation
@@ -29,8 +28,12 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.homeToSimpleTransitionsFragment)
         }
 
-        view.findViewById<MaterialCardView>(R.id.coordinated_motion_card_view).setOnClickListener {
+        view.findViewById<MaterialCardView>(R.id.coordinated_motion_main_card_view).setOnClickListener {
             findNavController().navigate(R.id.homeToCoordinatedMotionFragment)
+        }
+
+        view.findViewById<MaterialCardView>(R.id.recycler_view_main_card_view).setOnClickListener {
+            findNavController().navigate(R.id.homeToRecyclerViewFragment)
         }
 
         val parent: ConstraintLayout = view.findViewById(R.id.home_fragment_parent)
