@@ -21,7 +21,18 @@
             app:cardBackgroundColor="@color/colorFirstCard"
             app:cardCornerRadius="8dp"
             app:cardElevation="16dp"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/pacifico"
+                android:padding="24dp"
+                android:text="@string/orange_text"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+                android:textColor="?attr/colorOnSecondary" />
+
+        </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/second_card"
@@ -31,7 +42,18 @@
             app:cardBackgroundColor="@color/colorSecondCard"
             app:cardCornerRadius="8dp"
             app:cardElevation="16dp"
-            app:layout_constraintTop_toBottomOf="@id/first_card" />
+            app:layout_constraintTop_toBottomOf="@id/first_card">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/pacifico"
+                android:padding="24dp"
+                android:text="@string/teal_text"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+                android:textColor="?attr/colorOnSecondary" />
+
+        </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/third_card"
@@ -41,7 +63,18 @@
             app:cardBackgroundColor="@color/colorThirdCard"
             app:cardCornerRadius="8dp"
             app:cardElevation="16dp"
-            app:layout_constraintTop_toBottomOf="@id/second_card" />
+            app:layout_constraintTop_toBottomOf="@id/second_card">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/pacifico"
+                android:padding="24dp"
+                android:text="@string/purple_text"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+                android:textColor="?attr/colorOnSecondary" />
+
+        </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/fourth_card"
@@ -51,7 +84,18 @@
             app:cardBackgroundColor="@color/colorFourthCard"
             app:cardCornerRadius="8dp"
             app:cardElevation="16dp"
-            app:layout_constraintTop_toBottomOf="@id/third_card" />
+            app:layout_constraintTop_toBottomOf="@id/third_card">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/pacifico"
+                android:padding="24dp"
+                android:text="@string/red_text"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+                android:textColor="?attr/colorOnSecondary" />
+
+        </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/fifth_card"
@@ -61,7 +105,18 @@
             app:cardBackgroundColor="@color/colorFifthCard"
             app:cardCornerRadius="8dp"
             app:cardElevation="16dp"
-            app:layout_constraintTop_toBottomOf="@id/fourth_card" />
+            app:layout_constraintTop_toBottomOf="@id/fourth_card">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/pacifico"
+                android:padding="24dp"
+                android:text="@string/Indigo_text"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+                android:textColor="?attr/colorOnSecondary" />
+
+        </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/sixth_card"
@@ -71,7 +126,18 @@
             app:cardBackgroundColor="@color/colorSixthCard"
             app:cardCornerRadius="8dp"
             app:cardElevation="16dp"
-            app:layout_constraintTop_toBottomOf="@id/fifth_card" />
+            app:layout_constraintTop_toBottomOf="@id/fifth_card">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/pacifico"
+                android:padding="24dp"
+                android:text="@string/green_text"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+                android:textColor="?attr/colorOnSecondary" />
+
+        </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/seventh_card"
@@ -81,7 +147,18 @@
             app:cardBackgroundColor="@color/colorSeventhCard"
             app:cardCornerRadius="8dp"
             app:cardElevation="16dp"
-            app:layout_constraintTop_toBottomOf="@id/sixth_card" />
+            app:layout_constraintTop_toBottomOf="@id/sixth_card">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/pacifico"
+                android:padding="24dp"
+                android:text="@string/yellow_text"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+                android:textColor="?attr/colorOnSecondary" />
+
+        </com.google.android.material.card.MaterialCardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

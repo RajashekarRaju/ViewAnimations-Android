@@ -23,6 +23,7 @@
             android:layout_height="match_parent"
             android:background="@drawable/first_gradient_bg"
             android:padding="24dp"
+            android:fontFamily="@font/pacifico"
             android:text="@string/simple_transition_text"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
             android:textColor="?attr/colorOnSecondary" />
@@ -30,7 +31,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/interpolator_main_card_view"
+        android:id="@+id/recycler_view_main_card_view"
         android:layout_width="match_parent"
         android:layout_height="140dp"
         android:layout_margin="16dp"
@@ -44,27 +45,29 @@
             android:layout_height="match_parent"
             android:background="@drawable/second_gradient_bg"
             android:padding="24dp"
-            android:text="@string/interpolator_text"
+            android:fontFamily="@font/pacifico"
+            android:text="@string/recycler_view_text"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
             android:textColor="?attr/colorOnSecondary" />
 
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/coordinated_motion_card_view"
+        android:id="@+id/coordinated_motion_main_card_view"
         android:layout_width="match_parent"
         android:layout_height="140dp"
         android:layout_margin="16dp"
         app:cardCornerRadius="8dp"
         app:cardElevation="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/interpolator_main_card_view">
+        app:layout_constraintTop_toBottomOf="@id/recycler_view_main_card_view">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/third_gradient_bg"
             android:padding="24dp"
+            android:fontFamily="@font/pacifico"
             android:text="@string/coordinate_text"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
             android:textColor="?attr/colorOnSecondary" />
