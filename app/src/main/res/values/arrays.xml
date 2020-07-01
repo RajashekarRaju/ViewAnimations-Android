@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="animation_category">
+        <item>AccelerateCubic</item>
+        <item>AccelerateDecelerate</item>
+        <item>AccelerateQuad</item>
+        <item>AccelerateQuint</item>
+        <item>Anticipate</item>
+        <item>AnticipateOvershoot</item>
+        <item>Bounce</item>
+        <item>DecelerateCubic</item>
+        <item>DecelerateQuad</item>
+        <item>FastOutExtraSlowIn</item>
+        <item>FastOutLinearIn</item>
+        <item>FastOutSlowIn</item>
+        <item>Linear</item>
+        <item>LinearOutSlowIn</item>
+        <item>Overshoot</item>
+    </string-array>
+
+</resources>
