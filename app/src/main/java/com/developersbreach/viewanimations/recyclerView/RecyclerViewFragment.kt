@@ -5,9 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.doOnPreDraw
 import androidx.navigation.NavDirections
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import androidx.transition.TransitionInflater
 import com.developersbreach.viewanimations.R
 
 class RecyclerViewFragment : Fragment() {
@@ -19,7 +22,10 @@ class RecyclerViewFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_recycler_view, container, false)
+        val view = inflater.inflate(R.layout.fragment_recycler_view, container, false)
+        sharedElementReturnTransition =
+            TransitionInflater.from(context).inflateTransition(android.R.transition.move)
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -29,7 +35,12 @@ class RecyclerViewFragment : Fragment() {
         val list = Sports.sportsList(requireContext())
         val adapter = SportsAdapter(list, sportsItemListener)
         recyclerView.adapter = adapter
-        recyclerView.setHasFixedSize(true)
+
+        // When user hits back button transition takes backward
+        postponeEnterTransition()
+        recyclerView.doOnPreDraw {
+            startPostponedEnterTransition()
+        }
 
         RecyclerViewItemDecoration.setItemSpacing(
             resources,
@@ -37,22 +48,15 @@ class RecyclerViewFragment : Fragment() {
         )
     }
 
-    private val sportsItemListener = SportsAdapter.OnClickListener { sports, _ ->
+    private val sportsItemListener = SportsAdapter.OnClickListener { sports, imageView, textView ->
         val direction: NavDirections =
             RecyclerViewFragmentDirections.ListToDetailFragment(sports)
-        findNavController().navigate(direction)
-    }
 
-    override fun onResume() {
-        super.onResume()
-        startLinearAnimation(recyclerView)
-    }
+        val extras = FragmentNavigatorExtras(
+            imageView to sports.banner.toString(),
+            textView to sports.title
+        )
 
-    private fun startLinearAnimation(view: RecyclerView) {
-        view.translationY = 800f
-        val viewPropertyAnimator = view.animate()
-        viewPropertyAnimator.translationY(0f)
-        viewPropertyAnimator.duration = 300L
-        viewPropertyAnimator.start()
+        findNavController().navigate(direction, extras)
     }
 }
