@@ -2,14 +2,14 @@ package com.developersbreach.viewanimations.coorodinated
 
 import android.content.Context
 import android.view.View
+import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import android.view.animation.Interpolator
-import androidx.constraintlayout.widget.ConstraintLayout
 
 
 fun startAnimation(
     animationType: Int,
-    parent: ConstraintLayout,
+    parent: ViewGroup,
     context: Context
 ) {
     val interpolator = makeAnimation(animationType, context)

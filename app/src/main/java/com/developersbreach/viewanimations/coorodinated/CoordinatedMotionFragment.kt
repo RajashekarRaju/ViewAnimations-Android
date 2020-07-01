@@ -26,7 +26,7 @@ class CoordinatedMotionFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         parent = view.findViewById(R.id.coordination_motion_parent)
-        startAnimation(android.R.interpolator.accelerate_cubic, parent, requireContext())
+        startAnimation(android.R.interpolator.overshoot, parent, requireContext())
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
