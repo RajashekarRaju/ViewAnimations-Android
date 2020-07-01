@@ -16,17 +16,19 @@ class SportsAdapter(
 
     class SportsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        private val iconImageView: ImageView = itemView.findViewById(R.id.sports_item_image_view)
-        private val titleTextView: TextView = itemView.findViewById(R.id.title_item_text_view)
+        private val banner: ImageView = itemView.findViewById(R.id.sports_item_image_view)
+        private val title: TextView = itemView.findViewById(R.id.title_item_text_view)
 
         fun bind(
             sports: Sports,
             onClickListener: OnClickListener
         ) {
-            iconImageView.setImageResource(sports.banner)
-            titleTextView.text = sports.title
+            banner.setImageResource(sports.banner)
+            banner.transitionName = sports.banner.toString()
+            title.text = sports.title
+            title.transitionName = sports.title
             itemView.setOnClickListener {
-                onClickListener.onClick(sports, iconImageView)
+                onClickListener.onClick(sports, banner, title)
             }
         }
     }
@@ -48,10 +50,11 @@ class SportsAdapter(
 
     override fun getItemCount() = sportsList.size
 
-    class OnClickListener(val clickListener: (Sports, ImageView) -> Unit) {
+    class OnClickListener(val clickListener: (Sports, ImageView, TextView) -> Unit) {
         fun onClick(
             sports: Sports,
-            iconImageView: ImageView
-        ) = clickListener(sports, iconImageView)
+            iconImageView: ImageView,
+            title: TextView
+        ) = clickListener(sports, iconImageView, title)
     }
 }
