@@ -15,7 +15,7 @@
             android:id="@+id/homeToSimpleTransitionsFragment"
             app:destination="@id/simpleTransitionsFragment" />
         <action
-            android:id="@+id/HomeToCoordinatedMotionFragment"
+            android:id="@+id/homeToCoordinatedMotionFragment"
             app:destination="@id/coordinatedMotionFragment" />
     </fragment>
 
@@ -24,10 +24,11 @@
         android:name="com.developersbreach.viewanimations.simpleTransition.SimpleTransitionsFragment"
         android:label="Simple Transitions"
         tools:layout="@layout/fragment_simple_transitions" />
+
     <fragment
         android:id="@+id/coordinatedMotionFragment"
         android:name="com.developersbreach.viewanimations.coorodinated.CoordinatedMotionFragment"
-        android:label="fragment_coordinated_motion"
+        android:label="CoordinatedMotion"
         tools:layout="@layout/fragment_coordinated_motion" />
 
 </navigation>

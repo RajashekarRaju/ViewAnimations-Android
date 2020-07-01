@@ -6,4 +6,6 @@
     <string name="simple_transition_text">Simple Transition</string>
     <string name="interpolator_text">Interpolator</string>
     <string name="coordinate_text">Coordinate</string>
+    <string name="animate_menu_item_title">Animate</string>
+    <string name="animate_category_item_title">Category</string>
 </resources>

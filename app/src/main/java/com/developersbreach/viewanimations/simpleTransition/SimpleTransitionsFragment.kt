@@ -6,8 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.developersbreach.viewanimations.R
-import com.developersbreach.viewanimations.fadeOutViewAnimation
-import com.developersbreach.viewanimations.startCircularFillingEffect
 import com.google.android.material.card.MaterialCardView
 
 
@@ -29,16 +27,28 @@ class SimpleTransitionsFragment : Fragment() {
         val fadeExitCardView = view.findViewById<MaterialCardView>(R.id.card_fade_exit)
 
         fillFadeExitCardView.setOnClickListener {
-            startCircularFillingEffect(fillFadeExitCardView, requireContext())
-            fadeOutViewAnimation(fillFadeExitCardView, requireContext())
+            startCircularFillingEffect(
+                fillFadeExitCardView,
+                requireContext()
+            )
+            fadeOutViewAnimation(
+                fillFadeExitCardView,
+                requireContext()
+            )
         }
 
         fillCardView.setOnClickListener {
-            startCircularFillingEffect(fillCardView, requireContext())
+            startCircularFillingEffect(
+                fillCardView,
+                requireContext()
+            )
         }
 
         fadeExitCardView.setOnClickListener {
-            fadeOutViewAnimation(fadeExitCardView, requireContext())
+            fadeOutViewAnimation(
+                fadeExitCardView,
+                requireContext()
+            )
         }
     }
 }

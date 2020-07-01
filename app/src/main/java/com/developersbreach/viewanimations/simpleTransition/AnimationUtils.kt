@@ -1,4 +1,4 @@
-package com.developersbreach.viewanimations
+package com.developersbreach.viewanimations.simpleTransition
 
 import android.animation.Animator
 import android.annotation.SuppressLint
@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewAnimationUtils
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import com.developersbreach.viewanimations.R
 import com.google.android.material.card.MaterialCardView
 import kotlin.math.hypot
 
@@ -61,7 +62,9 @@ fun fadeOutViewAnimation(
     view: View,
     context: Context
 ): Animation {
-    val animFadeOut = AnimationUtils.loadAnimation(context, R.anim.fade_exit)
+    val animFadeOut = AnimationUtils.loadAnimation(context,
+        R.anim.fade_exit
+    )
     animFadeOut.duration = 2000L
     view.startAnimation(animFadeOut)
     return animFadeOut
