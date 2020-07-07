@@ -36,6 +36,10 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.homeToRecyclerViewFragment)
         }
 
+        view.findViewById<MaterialCardView>(R.id.motion_main_card_view).setOnClickListener {
+            findNavController().navigate(R.id.homeToMotionFragment)
+        }
+
         val parent: ConstraintLayout = view.findViewById(R.id.home_fragment_parent)
         startAnimation(android.R.interpolator.overshoot, parent, requireContext())
     }
