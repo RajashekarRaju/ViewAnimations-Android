@@ -31,6 +31,13 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@android:anim/slide_in_left"
             app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/homeToMotionFragment"
+            app:destination="@id/motionFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
     </fragment>
 
     <fragment
@@ -68,5 +75,21 @@
             android:name="sportsArgs"
             app:argType="com.developersbreach.viewanimations.recyclerView.Sports" />
     </fragment>
+
+    <fragment
+        android:id="@+id/motionFragment"
+        android:name="com.developersbreach.viewanimations.motion.MotionFragment"
+        android:label="Motion"
+        tools:layout="@layout/fragment_motion" >
+        <action
+            android:id="@+id/motionToMotionDetailFragment"
+            app:destination="@id/motionDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/motionDetailFragment"
+        android:name="com.developersbreach.viewanimations.motion.MotionDetailFragment"
+        android:label="Container Transform"
+        tools:layout="@layout/fragment_motion_detail" />
 
 </navigation>

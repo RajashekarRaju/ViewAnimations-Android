@@ -1,14 +1,22 @@
 <resources>
     <string name="app_name">ViewAnimations</string>
+
+    <!--  Fade animations  -->
     <string name="fill_and_fade_exit">Fill and Fade Exit</string>
     <string name="fill">Fill only</string>
     <string name="fade_exit">Fade Exit</string>
+
+    <!--  Main CardView list names  -->
     <string name="simple_transition_text">Simple Transition</string>
     <string name="recycler_view_text">RecyclerView</string>
     <string name="coordinate_text">Coordinate</string>
+    <string name="motion_text">Motion</string>
+
+    <!--  Menu Item  -->
     <string name="animate_menu_item_title">Animate</string>
     <string name="animate_category_item_title">Category</string>
 
+    <!--  Card items names inside Coordinator layout  -->
     <string name="orange_text">Orange</string>
     <string name="teal_text">Teal</string>
     <string name="purple_text">Purple</string>
@@ -17,7 +25,10 @@
     <string name="green_text">Green</string>
     <string name="yellow_text">Yellow</string>
 
+    <!--    Transition name for motion imageView-->
+    <string name="motion_transition_name">Motion Transition Name</string>
 
+    <!--  Data for Shared Element Transitions - Title  -->
     <string name="title_rugby">Rugby</string>
     <string name="title_cricket">Cricket</string>
     <string name="title_basketball">Basketball</string>
@@ -30,7 +41,7 @@
     <string name="title_soccer">Soccer</string>
     <string name="title_handball">Handball</string>
     <string name="title_tennis">Tennis</string>
-
+    <!--  Data for Shared Element Transitions - About  -->
     <string name="about_rugby">
         Rugby union, widely known simply as rugby, is a full contact team sport that originated in
         England in the first half of the 19th century. One of the two codes of rugby football, it is
