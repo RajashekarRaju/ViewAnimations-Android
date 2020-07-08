@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".motion.MotionDetailFragment">
+    tools:context=".motion.single.SimpleMotionDetailFragment">
 
     <ImageView
         android:id="@+id/motion_detail_image_item"
