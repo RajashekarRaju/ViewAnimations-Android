@@ -32,8 +32,8 @@
             app:popEnterAnim="@android:anim/slide_in_left"
             app:popExitAnim="@android:anim/slide_out_right" />
         <action
-            android:id="@+id/homeToMotionFragment"
-            app:destination="@id/motionFragment"
+            android:id="@+id/homeToMotionCategoryFragment"
+            app:destination="@id/motionCategoryFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@android:anim/slide_in_left"
@@ -78,9 +78,9 @@
 
     <fragment
         android:id="@+id/motionFragment"
-        android:name="com.developersbreach.viewanimations.motion.MotionFragment"
+        android:name="com.developersbreach.viewanimations.motion.single.SimpleMotionFragment"
         android:label="Motion"
-        tools:layout="@layout/fragment_motion" >
+        tools:layout="@layout/fragment_simple_motion" >
         <action
             android:id="@+id/motionToMotionDetailFragment"
             app:destination="@id/motionDetailFragment" />
@@ -88,8 +88,14 @@
 
     <fragment
         android:id="@+id/motionDetailFragment"
-        android:name="com.developersbreach.viewanimations.motion.MotionDetailFragment"
+        android:name="com.developersbreach.viewanimations.motion.single.SimpleMotionDetailFragment"
         android:label="Container Transform"
-        tools:layout="@layout/fragment_motion_detail" />
+        tools:layout="@layout/fragment_simple_motion_detail" />
+
+    <fragment
+        android:id="@+id/motionCategoryFragment"
+        android:name="com.developersbreach.viewanimations.motion.MotionCategoryFragment"
+        android:label="MotionCategoryFragment"
+        tools:layout="@layout/fragment_motion_category"/>
 
 </navigation>

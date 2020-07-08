@@ -37,7 +37,7 @@ class HomeFragment : Fragment() {
         }
 
         view.findViewById<MaterialCardView>(R.id.motion_main_card_view).setOnClickListener {
-            findNavController().navigate(R.id.homeToMotionFragment)
+            findNavController().navigate(R.id.homeToMotionCategoryFragment)
         }
 
         val parent: ConstraintLayout = view.findViewById(R.id.home_fragment_parent)
