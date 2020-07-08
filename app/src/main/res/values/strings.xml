@@ -28,6 +28,10 @@
     <!--    Transition name for motion imageView-->
     <string name="motion_transition_name">Motion Transition Name</string>
 
+    <!--  Card items names inside Motion layout  -->
+    <string name="simple_motion_text">Single Element</string>
+    <string name="list_motion_text">List</string>
+
     <!--  Data for Shared Element Transitions - Title  -->
     <string name="title_rugby">Rugby</string>
     <string name="title_cricket">Cricket</string>
