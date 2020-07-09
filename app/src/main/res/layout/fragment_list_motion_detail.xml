@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/motion_detail_container"
     tools:context=".motion.list.ListMotionDetailFragment">
 
-    <TextView
+    <ImageView
+        android:id="@+id/motion_list_detail_image_item"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        tools:ignore="ContentDescription"
+        tools:src="@drawable/ic_esports" />
 
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
