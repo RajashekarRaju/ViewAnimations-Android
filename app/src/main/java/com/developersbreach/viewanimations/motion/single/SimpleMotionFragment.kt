@@ -35,7 +35,7 @@ class SimpleMotionFragment : Fragment() {
             val extras = FragmentNavigatorExtras(
                 imageView to getString(R.string.motion_transition_name)
             )
-            findNavController().navigate(R.id.motionToMotionDetailFragment, null, null, extras)
+            findNavController().navigate(R.id.simpleMotionToSimpleMotionDetailFragment, null, null, extras)
         }
     }
 }
