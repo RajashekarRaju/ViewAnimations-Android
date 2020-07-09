@@ -77,25 +77,64 @@
     </fragment>
 
     <fragment
-        android:id="@+id/motionFragment"
+        android:id="@+id/simpleMotionFragment"
         android:name="com.developersbreach.viewanimations.motion.single.SimpleMotionFragment"
-        android:label="Motion"
+        android:label="Simple Motion"
         tools:layout="@layout/fragment_simple_motion" >
         <action
-            android:id="@+id/motionToMotionDetailFragment"
-            app:destination="@id/motionDetailFragment" />
+            android:id="@+id/simpleMotionToSimpleMotionDetailFragment"
+            app:destination="@id/simpleMotionDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
     </fragment>
 
     <fragment
-        android:id="@+id/motionDetailFragment"
+        android:id="@+id/simpleMotionDetailFragment"
         android:name="com.developersbreach.viewanimations.motion.single.SimpleMotionDetailFragment"
-        android:label="Container Transform"
+        android:label="Detail Motion"
         tools:layout="@layout/fragment_simple_motion_detail" />
 
     <fragment
         android:id="@+id/motionCategoryFragment"
         android:name="com.developersbreach.viewanimations.motion.MotionCategoryFragment"
-        android:label="MotionCategoryFragment"
-        tools:layout="@layout/fragment_motion_category"/>
+        android:label="Motion"
+        tools:layout="@layout/fragment_motion_category">
+        <action
+            android:id="@+id/motionCategoryToSimpleMotionFragment"
+            app:destination="@id/simpleMotionFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/motionCategoryToListMotionFragment"
+            app:destination="@id/listMotionFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/listMotionFragment"
+        android:name="com.developersbreach.viewanimations.motion.list.ListMotionFragment"
+        android:label="List Motion"
+        tools:layout="@layout/fragment_list_motion" >
+        <action
+            android:id="@+id/listMotionToMotionDetailFragment"
+            app:destination="@id/listMotionDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/listMotionDetailFragment"
+        android:name="com.developersbreach.viewanimations.motion.list.ListMotionDetailFragment"
+        android:label="Detail Motion"
+        tools:layout="@layout/fragment_list_motion_detail" >
+        <argument
+            android:name="motionDetailArgs"
+            app:argType="com.developersbreach.viewanimations.recyclerView.Sports" />
+    </fragment>
 
 </navigation>
