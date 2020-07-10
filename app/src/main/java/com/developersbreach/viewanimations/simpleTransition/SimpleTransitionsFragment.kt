@@ -5,48 +5,47 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.developersbreach.viewanimations.R
-import com.google.android.material.card.MaterialCardView
+import com.developersbreach.viewanimations.databinding.FragmentSimpleTransitionsBinding
 
 
 class SimpleTransitionsFragment : Fragment() {
+
+    private lateinit var binding: FragmentSimpleTransitionsBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_simple_transitions, container, false)
+        binding = FragmentSimpleTransitionsBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val fillFadeExitCardView = view.findViewById<MaterialCardView>(R.id.card_filling_and_fade)
-        val fillCardView = view.findViewById<MaterialCardView>(R.id.card_filling)
-        val fadeExitCardView = view.findViewById<MaterialCardView>(R.id.card_fade_exit)
-
-        fillFadeExitCardView.setOnClickListener {
+        binding.cardFillingAndFade.setOnClickListener {
             startCircularFillingEffect(
-                fillFadeExitCardView,
+                binding.cardFillingAndFade,
                 requireContext()
             )
+
             fadeOutViewAnimation(
-                fillFadeExitCardView,
+                binding.cardFillingAndFade,
                 requireContext()
             )
         }
 
-        fillCardView.setOnClickListener {
+        binding.cardFilling.setOnClickListener {
             startCircularFillingEffect(
-                fillCardView,
+                binding.cardFilling,
                 requireContext()
             )
         }
 
-        fadeExitCardView.setOnClickListener {
+        binding.cardFadeExit.setOnClickListener {
             fadeOutViewAnimation(
-                fadeExitCardView,
+                binding.cardFadeExit,
                 requireContext()
             )
         }

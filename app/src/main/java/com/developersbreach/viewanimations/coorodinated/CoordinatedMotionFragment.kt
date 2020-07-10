@@ -7,10 +7,12 @@ import androidx.appcompat.app.AlertDialog
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import com.developersbreach.viewanimations.R
+import com.developersbreach.viewanimations.databinding.FragmentCoordinatedMotionBinding
 
 
 class CoordinatedMotionFragment : Fragment() {
 
+    private lateinit var binding: FragmentCoordinatedMotionBinding
     private lateinit var parent: ConstraintLayout
     private var checkedItem = -1
 
@@ -20,13 +22,18 @@ class CoordinatedMotionFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         setHasOptionsMenu(true)
-        return inflater.inflate(R.layout.fragment_coordinated_motion, container, false)
+        binding = FragmentCoordinatedMotionBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        parent = view.findViewById(R.id.coordination_motion_parent)
-        startAnimation(android.R.interpolator.overshoot, parent, requireContext())
+        parent = binding.coordinationMotionParent
+        startAnimation(
+            android.R.interpolator.overshoot,
+            parent,
+            requireContext()
+        )
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

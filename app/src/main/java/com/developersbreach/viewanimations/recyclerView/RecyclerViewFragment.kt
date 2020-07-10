@@ -9,42 +9,40 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavDirections
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.RecyclerView
 import androidx.transition.TransitionInflater
-import com.developersbreach.viewanimations.R
+import com.developersbreach.viewanimations.databinding.FragmentRecyclerViewBinding
 
 class RecyclerViewFragment : Fragment() {
 
-    private lateinit var recyclerView: RecyclerView
+    private lateinit var binding: FragmentRecyclerViewBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_recycler_view, container, false)
+        binding = FragmentRecyclerViewBinding.inflate(inflater, container, false)
         sharedElementReturnTransition =
             TransitionInflater.from(context).inflateTransition(android.R.transition.move)
-        return view
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        recyclerView = view.findViewById(R.id.sports_recycler_view)
         val list = Sports.sportsList(requireContext())
         val adapter = SportsAdapter(list, sportsItemListener)
-        recyclerView.adapter = adapter
+        binding.sportsRecyclerView.adapter = adapter
 
         // When user hits back button transition takes backward
         postponeEnterTransition()
-        recyclerView.doOnPreDraw {
+        binding.sportsRecyclerView.doOnPreDraw {
             startPostponedEnterTransition()
         }
 
         RecyclerViewItemDecoration.setItemSpacing(
             resources,
-            recyclerView
+            binding.sportsRecyclerView
         )
     }
 
