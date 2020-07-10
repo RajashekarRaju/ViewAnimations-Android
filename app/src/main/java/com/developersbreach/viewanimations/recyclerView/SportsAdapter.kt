@@ -1,12 +1,11 @@
 package com.developersbreach.viewanimations.recyclerView
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.developersbreach.viewanimations.R
+import com.developersbreach.viewanimations.databinding.ItemSportsBinding
 
 class SportsAdapter(
     private val sportsList: List<Sports>,
@@ -14,31 +13,33 @@ class SportsAdapter(
 ) :
     RecyclerView.Adapter<SportsAdapter.SportsViewHolder>() {
 
-    class SportsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
-        private val banner: ImageView = itemView.findViewById(R.id.sports_item_image_view)
-        private val title: TextView = itemView.findViewById(R.id.title_item_text_view)
+    class SportsViewHolder(
+        private val binding: ItemSportsBinding
+    ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(
             sports: Sports,
             onClickListener: OnClickListener
         ) {
-            banner.setImageResource(sports.banner)
-            banner.transitionName = sports.banner.toString()
-            title.text = sports.title
-            title.transitionName = sports.title
+            binding.sportsItemImageView.setImageResource(sports.banner)
+            binding.titleItemTextView.text = sports.title
+            binding.sportsItemImageView.transitionName = sports.banner.toString()
+            binding.titleItemTextView.transitionName = sports.title
+
             itemView.setOnClickListener {
-                onClickListener.onClick(sports, banner, title)
+                onClickListener.onClick(
+                    sports,
+                    binding.sportsItemImageView,
+                    binding.titleItemTextView
+                )
             }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SportsViewHolder {
         return SportsViewHolder(
-            LayoutInflater.from(parent.context).inflate(
-                R.layout.item_sports,
-                parent,
-                false
+            ItemSportsBinding.inflate(
+                LayoutInflater.from(parent.context), parent, false
             )
         )
     }
