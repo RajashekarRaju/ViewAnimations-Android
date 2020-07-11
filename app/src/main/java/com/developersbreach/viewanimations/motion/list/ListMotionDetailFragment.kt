@@ -4,20 +4,24 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.fragment.app.Fragment
-import com.developersbreach.viewanimations.R
+import com.developersbreach.viewanimations.databinding.FragmentListMotionDetailBinding
 import com.developersbreach.viewanimations.recyclerView.Sports
 import com.google.android.material.transition.MaterialContainerTransform
+import java.util.concurrent.TimeUnit
 
 class ListMotionDetailFragment : Fragment() {
 
+    private lateinit var binding: FragmentListMotionDetailBinding
     private lateinit var sportsArgs: Sports
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         sportsArgs = ListMotionDetailFragmentArgs.fromBundle(requireArguments()).motionDetailArgs
+        postponeEnterTransition(500L, TimeUnit.MILLISECONDS)
         sharedElementEnterTransition = MaterialContainerTransform()
+        sharedElementReturnTransition = MaterialContainerTransform()
     }
 
     override fun onCreateView(
@@ -25,16 +29,12 @@ class ListMotionDetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_list_motion_detail, container, false)
-    }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        binding = FragmentListMotionDetailBinding.inflate(inflater, container, false)
 
-        val container: View = view.findViewById(R.id.motion_detail_container)
-        val banner: ImageView = view.findViewById(R.id.motion_list_detail_image_item)
+        binding.motionListDetailImageItem.setImageResource(sportsArgs.banner)
+        binding.motionDetailContainer.transitionName = sportsArgs.title
 
-        banner.setImageResource(sportsArgs.banner)
-        container.transitionName = sportsArgs.title
+        return binding.root
     }
 }
