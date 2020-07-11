@@ -14,7 +14,9 @@ class MotionAdapter(
 ) :
     RecyclerView.Adapter<MotionAdapter.MotionViewHolder>() {
 
-    class MotionViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class MotionViewHolder(
+        itemView: View
+    ) : RecyclerView.ViewHolder(itemView) {
 
         private val container: View = itemView.findViewById(R.id.motion_item_container)
         private val banner: ImageView = itemView.findViewById(R.id.motion_item_image_view)
