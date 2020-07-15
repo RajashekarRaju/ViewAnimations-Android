@@ -3,100 +3,106 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/home_fragment_parent"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".HomeFragment">
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/simple_transition_main_card_view"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/home_fragment_parent"
             android:layout_width="match_parent"
-            android:layout_height="140dp"
-            android:layout_margin="16dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="16dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="wrap_content">
 
-            <TextView
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/simple_transition_main_card_view"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/first_gradient_bg"
-                android:padding="24dp"
-                android:fontFamily="@font/pacifico"
-                android:text="@string/simple_transition_text"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
-                android:textColor="?attr/colorOnSecondary" />
+                android:layout_height="140dp"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-        </com.google.android.material.card.MaterialCardView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/first_gradient_bg"
+                    android:fontFamily="@font/pacifico"
+                    android:padding="24dp"
+                    android:text="@string/simple_transition_text"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+                    android:textColor="?attr/colorOnSecondary" />
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/recycler_view_main_card_view"
-            android:layout_width="match_parent"
-            android:layout_height="140dp"
-            android:layout_margin="16dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="16dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/simple_transition_main_card_view">
+            </com.google.android.material.card.MaterialCardView>
 
-            <TextView
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/recycler_view_main_card_view"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/second_gradient_bg"
-                android:padding="24dp"
-                android:fontFamily="@font/pacifico"
-                android:text="@string/recycler_view_text"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
-                android:textColor="?attr/colorOnSecondary" />
+                android:layout_height="140dp"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/simple_transition_main_card_view">
 
-        </com.google.android.material.card.MaterialCardView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/second_gradient_bg"
+                    android:fontFamily="@font/pacifico"
+                    android:padding="24dp"
+                    android:text="@string/recycler_view_text"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+                    android:textColor="?attr/colorOnSecondary" />
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/coordinated_motion_main_card_view"
-            android:layout_width="match_parent"
-            android:layout_height="140dp"
-            android:layout_margin="16dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="16dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/recycler_view_main_card_view">
+            </com.google.android.material.card.MaterialCardView>
 
-            <TextView
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/coordinated_motion_main_card_view"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/third_gradient_bg"
-                android:padding="24dp"
-                android:fontFamily="@font/pacifico"
-                android:text="@string/coordinate_text"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
-                android:textColor="?attr/colorOnSecondary" />
+                android:layout_height="140dp"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recycler_view_main_card_view">
 
-        </com.google.android.material.card.MaterialCardView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/third_gradient_bg"
+                    android:fontFamily="@font/pacifico"
+                    android:padding="24dp"
+                    android:text="@string/coordinate_text"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+                    android:textColor="?attr/colorOnSecondary" />
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/motion_main_card_view"
-            android:layout_width="match_parent"
-            android:layout_height="140dp"
-            android:layout_margin="16dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="16dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/coordinated_motion_main_card_view">
+            </com.google.android.material.card.MaterialCardView>
 
-            <TextView
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/motion_main_card_view"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/fourth_gradient_bg"
-                android:padding="24dp"
-                android:fontFamily="@font/pacifico"
-                android:text="@string/motion_text"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
-                android:textColor="?attr/colorOnSecondary" />
+                android:layout_height="140dp"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/coordinated_motion_main_card_view">
 
-        </com.google.android.material.card.MaterialCardView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/fourth_gradient_bg"
+                    android:fontFamily="@font/pacifico"
+                    android:padding="24dp"
+                    android:text="@string/motion_text"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+                    android:textColor="?attr/colorOnSecondary" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 
 </layout>
