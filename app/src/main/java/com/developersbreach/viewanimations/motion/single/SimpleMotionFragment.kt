@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavDirections
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import com.developersbreach.viewanimations.R
@@ -32,10 +33,17 @@ class SimpleMotionFragment : Fragment() {
         val imageView: ImageView = view.findViewById(R.id.motion_image_item)
 
         imageView.setOnClickListener {
+
+            val directions: NavDirections =
+                SimpleMotionFragmentDirections.simpleMotionToSimpleMotionDetailFragment()
+
             val extras = FragmentNavigatorExtras(
                 imageView to getString(R.string.motion_transition_name)
             )
-            findNavController().navigate(R.id.simpleMotionToSimpleMotionDetailFragment, null, null, extras)
+
+            findNavController().navigate(
+                directions, extras
+            )
         }
     }
 }

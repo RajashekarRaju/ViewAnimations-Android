@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.developersbreach.viewanimations.R
 import com.developersbreach.viewanimations.databinding.FragmentMotionCategoryBinding
 
 class MotionCategoryFragment : Fragment() {
@@ -16,7 +15,7 @@ class MotionCategoryFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding = FragmentMotionCategoryBinding.inflate(inflater)
         return binding.root
@@ -26,11 +25,15 @@ class MotionCategoryFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.simpleMotionCategoryCardView.setOnClickListener {
-            findNavController().navigate(R.id.motionCategoryToSimpleMotionFragment)
+            findNavController().navigate(
+                MotionCategoryFragmentDirections.motionCategoryToSimpleMotionFragment()
+            )
         }
 
         binding.listMotionCategoryCardView.setOnClickListener {
-            findNavController().navigate(R.id.motionCategoryToListMotionFragment)
+            findNavController().navigate(
+                MotionCategoryFragmentDirections.motionCategoryToListMotionFragment()
+            )
         }
     }
 }

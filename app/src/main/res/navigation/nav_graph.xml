@@ -58,7 +58,7 @@
         android:label="RecyclerView"
         tools:layout="@layout/fragment_recycler_view">
         <action
-            android:id="@+id/ListToDetailFragment"
+            android:id="@+id/listToDetailFragment"
             app:destination="@id/detailFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
@@ -80,7 +80,7 @@
         android:id="@+id/simpleMotionFragment"
         android:name="com.developersbreach.viewanimations.motion.single.SimpleMotionFragment"
         android:label="Simple Motion"
-        tools:layout="@layout/fragment_simple_motion" >
+        tools:layout="@layout/fragment_simple_motion">
         <action
             android:id="@+id/simpleMotionToSimpleMotionDetailFragment"
             app:destination="@id/simpleMotionDetailFragment"
@@ -121,7 +121,7 @@
         android:id="@+id/listMotionFragment"
         android:name="com.developersbreach.viewanimations.motion.list.ListMotionFragment"
         android:label="List Motion"
-        tools:layout="@layout/fragment_list_motion" >
+        tools:layout="@layout/fragment_list_motion">
         <action
             android:id="@+id/listMotionToMotionDetailFragment"
             app:destination="@id/listMotionDetailFragment" />
@@ -131,7 +131,7 @@
         android:id="@+id/listMotionDetailFragment"
         android:name="com.developersbreach.viewanimations.motion.list.ListMotionDetailFragment"
         android:label="Detail Motion"
-        tools:layout="@layout/fragment_list_motion_detail" >
+        tools:layout="@layout/fragment_list_motion_detail">
         <argument
             android:name="motionDetailArgs"
             app:argType="com.developersbreach.viewanimations.recyclerView.Sports" />
