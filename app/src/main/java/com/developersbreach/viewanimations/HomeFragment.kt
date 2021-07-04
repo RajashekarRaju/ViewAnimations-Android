@@ -17,7 +17,7 @@ class HomeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
@@ -27,19 +27,27 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.simpleTransitionMainCardView.setOnClickListener {
-            findNavController().navigate(R.id.homeToSimpleTransitionsFragment)
+            findNavController().navigate(
+                HomeFragmentDirections.homeToSimpleTransitionsFragment()
+            )
         }
 
         binding.coordinatedMotionMainCardView.setOnClickListener {
-            findNavController().navigate(R.id.homeToCoordinatedMotionFragment)
+            findNavController().navigate(
+                HomeFragmentDirections.homeToCoordinatedMotionFragment()
+            )
         }
 
         binding.recyclerViewMainCardView.setOnClickListener {
-            findNavController().navigate(R.id.homeToRecyclerViewFragment)
+            findNavController().navigate(
+                HomeFragmentDirections.homeToRecyclerViewFragment()
+            )
         }
 
         binding.motionMainCardView.setOnClickListener {
-            findNavController().navigate(R.id.homeToMotionCategoryFragment)
+            findNavController().navigate(
+                HomeFragmentDirections.homeToMotionCategoryFragment()
+            )
         }
 
         startAnimation(
