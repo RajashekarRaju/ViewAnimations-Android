@@ -19,7 +19,7 @@ class RecyclerViewFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding = FragmentRecyclerViewBinding.inflate(inflater, container, false)
         sharedElementReturnTransition =
@@ -47,8 +47,7 @@ class RecyclerViewFragment : Fragment() {
     }
 
     private val sportsItemListener = SportsAdapter.OnClickListener { sports, imageView, textView ->
-        val direction: NavDirections =
-            RecyclerViewFragmentDirections.ListToDetailFragment(sports)
+        val direction: NavDirections = RecyclerViewFragmentDirections.listToDetailFragment(sports)
 
         val extras = FragmentNavigatorExtras(
             imageView to sports.banner.toString(),
